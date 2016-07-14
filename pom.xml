@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>io.swagger</groupId>
-  <artifactId>swagger-java-client</artifactId>
+  <groupId>com.squaremobile.shoutout.sdk</groupId>
+  <artifactId>shoutout-java-sdk</artifactId>
   <packaging>jar</packaging>
-  <name>swagger-java-client</name>
-  <version>1.0.0</version>
+  <name>ShoutOUT-java-sdk</name>
+  <version>7.0.0</version>
 
   <prerequisites>
     <maven>2.2.0</maven>
@@ -33,12 +33,12 @@
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
-            <phase>package</phase>
+            <phase>prepare-package</phase>
             <goals>
               <goal>copy-dependencies</goal>
             </goals>
             <configuration>
-              <outputDirectory>${project.build.directory}/lib</outputDirectory>
+              <outputDirectory>${project.build.directory}/classes/lib</outputDirectory>
             </configuration>
           </execution>
         </executions>
@@ -58,6 +58,12 @@
           </execution>
         </executions>
         <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+            </manifest>
+          </archive>
         </configuration>
       </plugin>
 
