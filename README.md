@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.squaremobile.shoutout.sdk:swagger-java-client:1.0.0"
+compile "com.squaremobile.shoutout.sdk:shoutout-java-sdk:1.0.0"
 ```
 
 ### Others
