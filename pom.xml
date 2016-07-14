@@ -64,6 +64,11 @@
               <classpathPrefix>lib/</classpathPrefix>
             </manifest>
           </archive>
+          <excludes>
+            <exclude>
+              **/sample/*
+            </exclude>
+          </excludes>
         </configuration>
       </plugin>
 
