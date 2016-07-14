@@ -26,7 +26,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>com.squaremobile.shoutout.sdk</groupId>
+    <groupId>com.squarelabs.shoutout.sdk</groupId>
     <artifactId>shoutout-java-sdk</artifactId>
     <version>7.0.0</version>
     <scope>compile</scope>
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.squaremobile.shoutout.sdk:shoutout-java-sdk:7.0.0"
+compile "com.squarelabs.shoutout.sdk:shoutout-java-sdk:7.0.0"
 ```
 
 ### Others
@@ -57,10 +57,10 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.squaremobile.shoutout.sdk.*;
-import com.squaremobile.shoutout.sdk.auth.*;
-import com.squaremobile.shoutout.sdk.model.*;
-import com.squaremobile.shoutout.sdk.api.ActivitiesApi;
+import com.squarelabs.shoutout.sdk.*;
+import com.squarelabs.shoutout.sdk.auth.*;
+import com.squarelabs.shoutout.sdk.model.*;
+import com.squarelabs.shoutout.sdk.api.ActivitiesApi;
 
 import java.io.File;
 import java.util.*;
