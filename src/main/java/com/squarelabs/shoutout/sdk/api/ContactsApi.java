@@ -140,7 +140,7 @@ public class ContactsApi {
    * @return Contact
    * @throws ApiException if fails to make API call
    */
-  public Contact createOrUpdateContact(String authorization, Contact contact) throws ApiException {
+  public Contact createOrUpdateContact(String authorization, Object contact) throws ApiException {
     Object localVarPostBody = contact;
     
     // verify the required parameter 'authorization' is set
