@@ -3,6 +3,7 @@ package com.squarelabs.shoutout.sdk.api;
 import com.squarelabs.shoutout.sdk.ApiClient;
 import com.squarelabs.shoutout.sdk.Configuration;
 import com.squarelabs.shoutout.sdk.Pair;
+import com.squarelabs.shoutout.sdk.auth.ApiKeyAuth;
 import com.squarelabs.shoutout.sdk.model.Message;
 import com.squarelabs.shoutout.sdk.ApiException;
 import com.squarelabs.shoutout.sdk.model.MessageResponse;
@@ -18,10 +19,6 @@ import java.util.Map;
 public class MessagesApi {
   private ApiClient apiClient;
 
-  public MessagesApi() {
-    this(Configuration.getDefaultApiClient());
-  }
-
   public MessagesApi(ApiClient apiClient) {
     this.apiClient = apiClient;
   }
@@ -35,26 +32,27 @@ public class MessagesApi {
   }
 
   /**
-   * 
+   *
    * Send a direct message
-   * @param authorization  (required)
    * @param message  (required)
    * @return MessageResponse
    * @throws ApiException if fails to make API call
    */
-  public MessageResponse sendMessage(String authorization, Message message) throws ApiException {
+  public MessageResponse sendMessage(Message message) throws ApiException {
     Object localVarPostBody = message;
-    
+    ApiKeyAuth ShoutOUTCustomAuthorizer = (ApiKeyAuth) apiClient.getAuthentication("ShoutOUTCustomAuthorizer");
+    String authorization = ShoutOUTCustomAuthorizer.getApiKey();
+
     // verify the required parameter 'authorization' is set
     if (authorization == null) {
       throw new ApiException(400, "Missing the required parameter 'authorization' when calling sendMessage");
     }
-    
+
     // verify the required parameter 'message' is set
     if (message == null) {
       throw new ApiException(400, "Missing the required parameter 'message' when calling sendMessage");
     }
-    
+
     // create path and map variables
     String localVarPath = "/messages".replaceAll("\\{format\\}","json");
 
@@ -63,18 +61,13 @@ public class MessagesApi {
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-
-    if (authorization != null)
-      localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
-
-    
     final String[] localVarAccepts = {
-      "application/json"
+            "application/json"
     };
     final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
     final String[] localVarContentTypes = {
-      "application/json"
+            "application/json"
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
@@ -82,5 +75,5 @@ public class MessagesApi {
 
     GenericType<MessageResponse> localVarReturnType = new GenericType<MessageResponse>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-      }
+  }
 }
