@@ -34,7 +34,7 @@ public class MessagePost {
             message.setSource("ShoutDEMO");//Sender Id
             message.setTransports(Arrays.asList(Message.TransportsEnum.SMS));//Type of transport (SMS). More transports will come soon
 
-            MessageResponse response = api.sendMessage(ShoutOUTCustomAuthorizer.getApiKey(), message);
+            MessageResponse response = api.sendMessage(message);
             //Do your stuff with the response
             System.out.println("Status:" + response.getStatus());
         } catch (Exception e) {
