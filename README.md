@@ -57,13 +57,13 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.squarelabs.shoutout.sdk.ApiClient;
-import com.squarelabs.shoutout.sdk.Configuration;
-import com.squarelabs.shoutout.sdk.api.MessagesApi;
-import com.squarelabs.shoutout.sdk.auth.ApiKeyAuth;
-import com.squarelabs.shoutout.sdk.model.Message;
-import com.squarelabs.shoutout.sdk.model.MessageContent;
-import com.squarelabs.shoutout.sdk.model.MessageResponse;
+import com.shoutoutlabs.shoutout.sdk.ApiClient;
+import com.shoutoutlabs.shoutout.sdk.Configuration;
+import com.shoutoutlabs.shoutout.sdk.api.MessagesApi;
+import com.shoutoutlabs.shoutout.sdk.auth.ApiKeyAuth;
+import com.shoutoutlabs.shoutout.sdk.model.Message;
+import com.shoutoutlabs.shoutout.sdk.model.MessageContent;
+import com.shoutoutlabs.shoutout.sdk.model.MessageResponse;
 
 import java.util.Arrays;
 
