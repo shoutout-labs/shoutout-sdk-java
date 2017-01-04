@@ -1,32 +1,19 @@
-# MessagesApi
-
-All URIs are relative to *https://amdimbh5tf.execute-api.us-east-1.amazonaws.com/v7*
-
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**sendMessage**](MessagesApi.md#sendMessage) | **POST** /messages | 
+package com.shoutoutlabs.shoutout.sdk.sample;
 
 
-<a name="sendMessage"></a>
-# **sendMessage**
-> MessageResponse sendMessage(authorization, message)
-
-
-
-Send a direct message
-
-### Example
-```java
-import com.shoutoutlabs.shoutout.sdk.ApiClient;
 import com.shoutoutlabs.shoutout.sdk.Configuration;
 import com.shoutoutlabs.shoutout.sdk.api.MessagesApi;
 import com.shoutoutlabs.shoutout.sdk.auth.ApiKeyAuth;
 import com.shoutoutlabs.shoutout.sdk.model.Message;
-import com.shoutoutlabs.shoutout.sdk.model.MessageContent;
 import com.shoutoutlabs.shoutout.sdk.model.MessageResponse;
+import com.shoutoutlabs.shoutout.sdk.ApiClient;
+import com.shoutoutlabs.shoutout.sdk.model.MessageContent;
 
 import java.util.Arrays;
 
+/**
+ * Created by Madura on 14/07/2016.
+ */
 public class MessagePost {
 
 
@@ -55,25 +42,3 @@ public class MessagePost {
         }
     }
 }
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **String**|  |
- **message** | [**Message**](Message.md)|  |
-
-### Return type
-
-[**MessageResponse**](MessageResponse.md)
-
-### Authorization
-
-[ShoutOUTCustomAuthorizer](../README.md#ShoutOUTCustomAuthorizer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
