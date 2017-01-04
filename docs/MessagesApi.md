@@ -17,30 +17,43 @@ Send a direct message
 
 ### Example
 ```java
-// Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.MessagesApi;
+import com.squarelabs.shoutout.sdk.ApiClient;
+import com.squarelabs.shoutout.sdk.Configuration;
+import com.squarelabs.shoutout.sdk.api.MessagesApi;
+import com.squarelabs.shoutout.sdk.auth.ApiKeyAuth;
+import com.squarelabs.shoutout.sdk.model.Message;
+import com.squarelabs.shoutout.sdk.model.MessageContent;
+import com.squarelabs.shoutout.sdk.model.MessageResponse;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+import java.util.Arrays;
 
-// Configure API key authorization: ShoutOUTCustomAuthorizer
-ApiKeyAuth ShoutOUTCustomAuthorizer = (ApiKeyAuth) defaultClient.getAuthentication("ShoutOUTCustomAuthorizer");
-ShoutOUTCustomAuthorizer.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ShoutOUTCustomAuthorizer.setApiKeyPrefix("Token");
+public class MessagePost {
 
-MessagesApi apiInstance = new MessagesApi();
-String authorization = "authorization_example"; // String | 
-Message message = new Message(); // Message | 
-try {
-    MessageResponse result = apiInstance.sendMessage(authorization, message);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MessagesApi#sendMessage");
-    e.printStackTrace();
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        // Configure API key authorization: ShoutOUTCustomAuthorizer
+        ApiKeyAuth ShoutOUTCustomAuthorizer = (ApiKeyAuth) defaultClient.getAuthentication("ShoutOUTCustomAuthorizer");
+        ShoutOUTCustomAuthorizer.setApiKeyPrefix("Apikey");
+        ShoutOUTCustomAuthorizer.setApiKey("YOUR API KEY");//Set Api Token
+
+        try {
+            MessagesApi api = new MessagesApi();
+            Message message = new Message();
+            MessageContent messageContent = new MessageContent();
+            messageContent.setSms("Hello, This is a test message"); //sms content
+            message.setContent(messageContent);
+            message.setDestinations(Arrays.asList("94778845713"));//mobile numbers to send the message
+            message.setSource("ShoutDEMO");//Sender Id
+            message.setTransports(Arrays.asList(Message.TransportsEnum.SMS));//Type of transport (SMS). More transports will come soon
+
+            MessageResponse response = api.sendMessage(message);
+            //Do your stuff with the response
+            System.out.println("Status:" + response.getStatus());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 

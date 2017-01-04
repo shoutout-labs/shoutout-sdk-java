@@ -1,6 +1,3 @@
-package com.squarelabs.shoutout.sdk.sample;
-
-
 import com.squarelabs.shoutout.sdk.ApiClient;
 import com.squarelabs.shoutout.sdk.Configuration;
 import com.squarelabs.shoutout.sdk.api.MessagesApi;
@@ -22,7 +19,7 @@ public class MessagePost {
         // Configure API key authorization: ShoutOUTCustomAuthorizer
         ApiKeyAuth ShoutOUTCustomAuthorizer = (ApiKeyAuth) defaultClient.getAuthentication("ShoutOUTCustomAuthorizer");
         ShoutOUTCustomAuthorizer.setApiKeyPrefix("Apikey");
-        ShoutOUTCustomAuthorizer.setApiKey("YOUR API KEY");//Set Api Token
+        ShoutOUTCustomAuthorizer.setApiKey("Your Api Key");//Set Api Token
 
         try {
             MessagesApi api = new MessagesApi();
@@ -30,7 +27,7 @@ public class MessagePost {
             MessageContent messageContent = new MessageContent();
             messageContent.setSms("Hello, This is a test message"); //sms content
             message.setContent(messageContent);
-            message.setDestinations(Arrays.asList("94778845713"));//mobile numbers to send the message
+            message.setDestinations(Arrays.asList("94791234567"));//mobile numbers to send the message
             message.setSource("ShoutDEMO");//Sender Id
             message.setTransports(Arrays.asList(Message.TransportsEnum.SMS));//Type of transport (SMS). More transports will come soon
 
@@ -42,3 +39,4 @@ public class MessagePost {
         }
     }
 }
+
