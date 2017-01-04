@@ -25,7 +25,7 @@ public class MessagePost {
         ShoutOUTCustomAuthorizer.setApiKey("YOUR API KEY");//Set Api Token
 
         try {
-            MessagesApi api = new MessagesApi();
+            MessagesApi api = new MessagesApi(defaultClient);
             Message message = new Message();
             MessageContent messageContent = new MessageContent();
             messageContent.setSms("Hello, This is a test message"); //sms content

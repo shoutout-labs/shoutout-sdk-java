@@ -9,7 +9,7 @@ import org.junit.Test;
  */
 public class MessagesApiTest {
 
-    private final MessagesApi api = new MessagesApi();
+    //private final MessagesApi api = new MessagesApi();
 
     
     /**
