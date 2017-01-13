@@ -26,7 +26,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>com.shoutoutlabs.shoutout.sdk</groupId>
+    <groupId>com.getshoutout.shoutout.sdk</groupId>
     <artifactId>shoutout-java-sdk</artifactId>
     <version>7.0.1</version>
     <scope>compile</scope>
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.shoutoutlabs.shoutout.sdk:shoutout-java-sdk:7.0.1"
+compile "com.getshoutout.shoutout.sdk:shoutout-java-sdk:7.0.1"
 ```
 
 ### Others
@@ -57,13 +57,13 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.shoutoutlabs.shoutout.sdk.ApiClient;
-import com.shoutoutlabs.shoutout.sdk.Configuration;
-import com.shoutoutlabs.shoutout.sdk.api.MessagesApi;
-import com.shoutoutlabs.shoutout.sdk.auth.ApiKeyAuth;
-import com.shoutoutlabs.shoutout.sdk.model.Message;
-import com.shoutoutlabs.shoutout.sdk.model.MessageContent;
-import com.shoutoutlabs.shoutout.sdk.model.MessageResponse;
+import com.getshoutout.shoutout.sdk.ApiClient;
+import com.getshoutout.shoutout.sdk.Configuration;
+import com.getshoutout.shoutout.sdk.api.MessagesApi;
+import com.getshoutout.shoutout.sdk.auth.ApiKeyAuth;
+import com.getshoutout.shoutout.sdk.model.Message;
+import com.getshoutout.shoutout.sdk.model.MessageContent;
+import com.getshoutout.shoutout.sdk.model.MessageResponse;
 
 import java.util.Arrays;
 
