@@ -43,7 +43,7 @@ import java.text.SimpleDateFormat;
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-13T10:36:50.130Z")
 public class ApiClient {
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
-  private String basePath = "https://amdimbh5tf.execute-api.us-east-1.amazonaws.com/v7";
+  private String basePath = "https://web.getshoutout.com/v7";
   private boolean debugging = false;
   private int connectionTimeout = 0;
 
